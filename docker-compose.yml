@@ -1,0 +1,10 @@
+services:
+  apachephp8:
+    image: docker.io/mxmfrlv/php-apache
+    container_name: php8
+    network_mode: host
+    volumes:
+      - ./www:/var/www/html
+      - /path_to/lamp_container/projects/:/path_to/lamp_container/projects/
+    restart: unless-stopped
+name: lamp_host
