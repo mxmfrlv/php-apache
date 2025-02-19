@@ -30,7 +30,7 @@ RUN set -x \
         socat \
     && apt-get clean \
     && useradd -m admin \
-    && docker-php-ext-install -j$(nproc) sockets bcmath exif iconv intl mysqli opcache pdo_mysql zip \
+    && docker-php-ext-install -j$(nproc) sockets bcmath exif intl mysqli opcache pdo_mysql zip \
     && docker-php-ext-configure sockets --enable-sockets \
     && docker-php-ext-configure bz2 --with-bz2=/usr/include/ \
     && docker-php-ext-install -j$(nproc) bz2 \
@@ -47,5 +47,5 @@ RUN set -x \
     && wget -O /usr/local/bin/composer "https://getcomposer.org/composer.phar" \
     && chmod +x /usr/local/bin/composer \
     && chown -R www-data:www-data /var/www/html \
-    && chmod +x /usr/local/bin/docker-php-entrypoint \
+    && chmod +x /usr/local/bin/docker-php-entrypoint
 
