@@ -15,9 +15,8 @@ if [ ! -e proc/1/root/lib64 ] ; then
     lib64_created=True
 fi
 
-ls -laF /proc/1/root/
 export PATH=$PATH:/.cdebug
-chroot /proc/1/root ash
+chroot /proc/1/root ash -c "echo 'content of /var/www/html/ :'; ls -laF /var/www/html/; echo 'content of $(pwd) :' ;ls -laF; ash"
 
 if [ $bin_created = True ] ; then
     rm /proc/1/root/bin
