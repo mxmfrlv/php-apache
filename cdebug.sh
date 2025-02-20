@@ -17,7 +17,7 @@ fi
 
 ls -laF /proc/1/root/
 export PATH=$PATH:/.cdebug
-chroot /proc/1/root sh
+chroot /proc/1/root ash
 
 if [ $bin_created = True ] ; then
     rm /proc/1/root/bin
